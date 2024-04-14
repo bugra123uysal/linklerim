@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>linklerimm</title>
+    <style>
+        /* linkleri yazdığımızz yer */
+        #lnk{
+            position: absolute;
+            display: none;
+
+        }
+
+        #linkegit{
+            position: absolute;
+            height: 550px;
+            width: 600px ;
+            border: solid 2px aqua;
+
+            left: 510px;
+            top: 60px;
+        }
+
+        /* buttonlar */
+        .btn{
+            position: relative;
+            height: 50px;
+            width: 350px;
+            margin: 6px; 
+            left: 110px;
+            overflow: hidden;
+            white-space: nowrap;
+
+        }
+      
+        .btn:nth-child(odd){
+            background-color: yellow;
+        }
+
+        .btn:nth-child(even){
+
+          background-color:aqua;
+
+        }
+        .btn:hover{
+        scale: 1.1;
+        border-color: red;
+        color: red;
+       }
+
+
+    </style>
+</head>
+<body>
+    <!-- ayarlar düzenlemeler -->
+    <button id="ggi" onclick="ayr()">⛭</button>
+    <!-- kaydetme  -->
+    <button onclick="kyd()">kaydet</button>
+      <!-- buttonkarın olduğu yer -->
+    <div id="linkegit">
+        <button class="btn"  id="a" onclick="yy()" >youtube</button>
+        <button class="btn"  id="b" onclick="ii()">instagram</button>
+        <button class="btn"  id="c" onclick="xx()">x</button>
+       
+        <button class="btn"  id="e" onclick="ww()">web sitem</button>
+        <button class="btn"  id="d" onclick="gg()">github</button>
+
+<!--  
+     
+        <button class="btn"  id="g" onclick=""> tradingview  </button>
+-->
+
+
+    </div>
+
+    <div id="lnk">
+  <textarea id="y" cols="30" rows="5"></textarea><br>
+  <textarea id="i" cols="30" rows="5"></textarea><br>
+  <textarea id="x" cols="30" rows="5"></textarea><br>
+  <textarea id="we" cols="30" rows="5"></textarea><br>
+  <textarea id="git" cols="30" rows="5"></textarea><br>
+
+
+ 
+  <!--  
+  <textarea id="tra" cols="30" rows="5"></textarea><br>
+
+-->
+
+
+
+    </div>
+    
+   
+
+
+    <script>
+            var lnk=document.getElementById("lnk");
+                
+            /* youtube linki */
+            var a=document.getElementById("a");
+
+            function yy(){
+                var y=document.getElementById("y").value;
+               location.href=y
+
+
+            }
+             /* instagramm */
+             var b=document.getElementById("b");
+            function ii(){
+                var i=document.getElementById("i").value;
+               
+                location.href=i
+            }
+
+        
+        /* x  */
+        
+   var c= document.getElementById("c");
+   function xx(){
+      var x = document.getElementById("x").value;
+      location.href=x
+
+   }
+/* web sitesi  */
+   function ww(){
+    var ww= document.getElementById("we").value;
+    location.href=ww;
+
+   }
+/* github */
+   function gg(){
+    var giit = document.getElementById("git").value;
+    location.href=giit;
+    
+}
+
+
+   
+   
+
+
+
+        /* ayarlar düzenlemeler  */
+        function ayr(){
+
+            var gizle=document.getElementById("ggi").addEventListener("click", function (){
+
+   if( lnk.style.display==="block") {
+    lnk.style.display="none";
+
+   }else {
+    lnk.style.display="block";  
+   }
+
+
+ });
+
+
+
+       
+
+        }
+
+        /* kaydetme */
+
+        document.addEventListener("DOMContentLoaded",function(){
+            var yyy=localStorage.getItem("youtube");
+            var iii=localStorage.getItem("inst");
+            var xxx= localStorage.getItem("twi");
+            var lll= localStorage.getItem("liink");
+            var wee=localStorage.getItem("wwi");
+            var gııi=localStorage.getItem("mrb");
+
+            if(yyy){
+           document.getElementById("y").value=yyy
+           
+            }
+            if(iii){
+                document.getElementById("i").value=iii
+            }
+
+            if(xxx){
+                 document.getElementById("x").value=xxx
+            }
+          
+
+            if(wee){
+                document.getElementById("we").value=wee
+            }
+
+            if(gııi){
+                document.getElementById("git").value=gııi;
+            }
+
+
+        });
+        function kyd(){
+            /* youtube  */
+            var you=document.getElementById("y").value;
+            localStorage.setItem("youtube",you);
+
+            /*  instagram */
+             var ins= document.getElementById("i").value;
+             localStorage.setItem("inst", ins);
+            
+             /* x  */
+             var ttw=document.getElementById("x").value;
+             localStorage.setItem("twi",ttw)
+
+             /* web siteö */
+             var ee=document.getElementById("we").value;
+            localStorage.setItem("wwi",ee)
+
+         var gğıı=document.getElementById("git").value;
+         localStorage.setItem("mrb",gğıı)
+             
+ 
+         }
+
+        
+
+
+    </script>
+    
+</body>
+</html>
